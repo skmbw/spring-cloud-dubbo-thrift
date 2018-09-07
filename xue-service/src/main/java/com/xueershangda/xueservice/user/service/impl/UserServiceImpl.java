@@ -10,7 +10,8 @@ import javax.inject.Inject;
 import java.util.List;
 
 /**
- *
+ * 基于thrift rpc的用户服务实现。方法签名的throws可以覆盖，不抛出。
+ * 有些方法要实现，有些不需要实现，是因为thrift.thrift定义文件很久了，和service不匹配。
  *
  * @author yinlei
  * @since 2018/9/7 17:13
@@ -33,12 +34,12 @@ public class UserServiceImpl extends BasicServiceImpl<User, String> implements U
 
     @Override
     public List<User> queryForList(User params) {
-        return null;
+        return userDao.pagedList(params);
     }
 
     @Override
     public List<User> queryForPage(User params) {
-        return null;
+        return userDao.pageForList(params);
     }
 
     @Override

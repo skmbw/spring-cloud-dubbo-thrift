@@ -1,0 +1,32 @@
+server:
+  port: 7765
+
+spring:
+  application:
+    name: xue-service
+  datasource:
+    url: jdbc:mysql://10.70.7.244:3306/tianxun_user?allowMultiQueries=true&autoReconnect=true&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      max-lifetime: 1765000
+      username: root
+      password: 0558yinlei3416763
+      transaction-isolation: TRANSACTION_REPEATABLE_READ
+    type: com.zaxxer.hikari.HikariDataSource
+  redis:
+    host: localhost
+    port: 6379
+
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+  mapper-locations: classpath*:/com/xueershangda/tianxun/**/mapper/*Mapper.xml
+
+logging:
+  level:
+    root: info
+    org.mybatis: debug
+    com.xueershangda: debug
+    com.vteba: info
+  path: ~/
+  file: xue-service.log
