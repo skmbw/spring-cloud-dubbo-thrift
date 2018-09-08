@@ -6,11 +6,13 @@
 
     <groupId>com.xueershangda</groupId>
     <artifactId>spring-cloud-dubbo-thrift</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
 
     <modules>
         <module>xue-api</module>
         <module>xue-service</module>
+        <module>xue-common</module>
     </modules>
 
 </project>
