@@ -44,6 +44,7 @@
                 <configuration>
                     <thriftExecutable>/usr/local/bin/thrift</thriftExecutable>
                     <thriftSourceRoot>${basedir}/src/main/thrift</thriftSourceRoot>
+                    <outputDirectory>${basedir}/src/main/java</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
