@@ -8,5 +8,9 @@
     <artifactId>spring-cloud-dubbo-thrift</artifactId>
     <version>1.0</version>
 
+    <modules>
+        <module>xue-api</module>
+        <module>xue-service</module>
+    </modules>
 
 </project>
