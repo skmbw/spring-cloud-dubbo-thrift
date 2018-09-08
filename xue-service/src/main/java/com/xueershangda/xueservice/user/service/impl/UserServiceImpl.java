@@ -19,7 +19,7 @@ import java.util.List;
  * @since 2018/9/7 17:13
  */
 @Log4j2
-@Service
+@Service(protocol = "thrift2")
 public class UserServiceImpl extends BasicServiceImpl<User, String> implements UserService.Iface {
 
     private UserDao userDao;
@@ -48,7 +48,8 @@ public class UserServiceImpl extends BasicServiceImpl<User, String> implements U
 
     @Override
     public User find(String id) {
-        return null;
+        User user = userDao.get(id);
+        return user;
     }
 
     @Override

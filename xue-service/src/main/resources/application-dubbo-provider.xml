@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://code.alibabatech.com/schema/dubbo
+	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="xue"/>
+
+    <!--dubbo 注册中心， address可以使用逗号分割。protocol="zookeeper" -->
+    <!--<dubbo:registry protocol="zookeeper" address="localhost:2181"/>-->
+    <dubbo:registry protocol="redis" address="${spring.redis.host}:${spring.redis.port}"/>
+    <dubbo:monitor protocol="registry" />
+
+    <dubbo:protocol name="thrift2" port="12410"/>
+
+    <!--<dubbo:service interface="com.vteba.thrift.server.AdditionService$Iface" protocol="thrift2" ref="addServiceImpl"/>-->
+    <!--<dubbo:service interface="com.vteba.tianxun.account.service.AccountService$Iface" protocol="thrift2" ref="accountServiceImpl"/>-->
+
+    <!-- 支持注解 -->
+    <dubbo:annotation package="com.xueershangda" />
+</beans>
