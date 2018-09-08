@@ -1,4 +1,4 @@
-package com.xueershangda.xueservice;
+package com.xueershangda.tianxun;
 
 import com.vteba.tx.dao.spi.BasicDao;
 import org.mybatis.spring.annotation.MapperScan;

@@ -1,4 +1,4 @@
-package com.xueershangda.xueservice.user.dao;
+package com.xueershangda.tianxun.user.dao;
 
 import com.vteba.tx.dao.spi.BasicDao;
 import com.xueershangda.tianxun.user.model.User;

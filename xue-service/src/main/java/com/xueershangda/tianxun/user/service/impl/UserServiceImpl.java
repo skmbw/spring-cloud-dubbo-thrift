@@ -1,11 +1,11 @@
-package com.xueershangda.xueservice.user.service.impl;
+package com.xueershangda.tianxun.user.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.vteba.common.service.impl.BasicServiceImpl;
 import com.vteba.tx.dao.spi.BasicDao;
+import com.xueershangda.tianxun.user.dao.UserDao;
 import com.xueershangda.tianxun.user.model.User;
 import com.xueershangda.tianxun.user.service.UserService;
-import com.xueershangda.xueservice.user.dao.UserDao;
 import lombok.extern.log4j.Log4j2;
 
 import javax.inject.Inject;
@@ -48,7 +48,8 @@ public class UserServiceImpl extends BasicServiceImpl<User, String> implements U
 
     @Override
     public User find(String id) {
-        User user = userDao.get(id);
+        User user = new User();
+        user = userDao.get(id);
         return user;
     }
 

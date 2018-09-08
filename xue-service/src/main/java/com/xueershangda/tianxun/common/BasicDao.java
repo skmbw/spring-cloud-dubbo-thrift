@@ -1,4 +1,4 @@
-package com.xueershangda.xueservice.common;
+package com.xueershangda.tianxun.common;
 
 import org.apache.ibatis.annotations.Param;
 

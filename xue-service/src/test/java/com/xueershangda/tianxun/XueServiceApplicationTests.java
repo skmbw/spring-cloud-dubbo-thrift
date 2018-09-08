@@ -1,4 +1,4 @@
-package com.xueershangda.xueservice;
+package com.xueershangda.tianxun;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
