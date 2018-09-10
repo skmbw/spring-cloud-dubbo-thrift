@@ -12,7 +12,7 @@
     <dubbo:registry protocol="redis" address="${spring.redis.host}:${spring.redis.port}"/>
 
     <!-- 服务消费者缺省值配置为<dubbo:reference>标签的缺省值设置 -->
-    <dubbo:consumer retries="0" timeout="100000" />
+    <dubbo:consumer retries="0" timeout="10000" />
     <dubbo:monitor protocol="registry"/>
 
     <!--<dubbo:reference id="addServiceImpl" interface="com.vteba.thrift.server.AdditionService$Iface" protocol="thrift2" />-->
