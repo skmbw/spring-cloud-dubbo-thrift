@@ -19,7 +19,7 @@ import java.util.List;
  * @since 2018/9/7 17:13
  */
 @Log4j2
-@Service(protocol = "thrift2")
+@Service
 public class UserServiceImpl extends BasicServiceImpl<User, String> implements UserService.Iface {
 
     private UserDao userDao;
