@@ -3,12 +3,16 @@ package com.xueershangda.tianxun.user.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.vteba.common.service.impl.BasicServiceImpl;
 import com.vteba.tx.dao.spi.BasicDao;
+import com.vteba.utils.reflection.BeanUtils;
 import com.xueershangda.tianxun.user.dao.UserDao;
 import com.xueershangda.tianxun.user.model.User;
-import com.xueershangda.tianxun.user.service.UserService;
+import com.xueershangda.tianxun.user.model.UserProtobuf;
+import com.xueershangda.tianxun.user.service.UserProtobufService;
 import lombok.extern.log4j.Log4j2;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,7 +24,7 @@ import java.util.List;
  */
 @Log4j2
 @Service
-public class UserServiceImpl extends BasicServiceImpl<User, String> implements UserService.Iface {
+public class UserServiceImpl extends BasicServiceImpl<User, String> implements UserProtobufService {
 
     private UserDao userDao;
 
@@ -31,30 +35,49 @@ public class UserServiceImpl extends BasicServiceImpl<User, String> implements U
         this.userDao = (UserDao) userDao;
     }
 
+//    @Override
+//    public int deleteBatch(User params) {
+//        return 0;
+//    }
+//
+//    @Override
+//    public List<User> queryForList(User params) {
+//        return userDao.pagedList(params);
+//    }
+//
+//    @Override
+//    public List<User> queryForPage(User params) {
+//        return userDao.pageForList(params);
+//    }
+//
+//    @Override
+//    public User find(String id) {
+//        User user = new User();
+//        user = userDao.get(id);
+//        return user;
+//    }
+//
+//    @Override
+//    public int updateBatch(User record, User params) {
+//        return 0;
+//    }
+
     @Override
-    public int deleteBatch(User params) {
-        return 0;
+    public UserProtobuf getUser(String id) {
+        User user = get(id);
+        UserProtobuf protobuf = new UserProtobuf();
+        BeanUtils.copy(user, protobuf);
+        return protobuf;
     }
 
     @Override
-    public List<User> queryForList(User params) {
-        return userDao.pagedList(params);
-    }
-
-    @Override
-    public List<User> queryForPage(User params) {
-        return userDao.pageForList(params);
-    }
-
-    @Override
-    public User find(String id) {
-        User user = new User();
-        user = userDao.get(id);
-        return user;
-    }
-
-    @Override
-    public int updateBatch(User record, User params) {
-        return 0;
+    public List<UserProtobuf> list(UserProtobuf user) {
+        UserProtobuf protobuf = new UserProtobuf();
+        protobuf.setAccount("yinlei");
+        protobuf.setAge(22);
+        protobuf.setBirthday(new Date().getTime());
+        List<UserProtobuf> list = new ArrayList<>();
+        list.add(protobuf);
+        return list;
     }
 }

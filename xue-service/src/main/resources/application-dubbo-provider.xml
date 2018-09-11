@@ -14,7 +14,8 @@
     <dubbo:registry protocol="redis" address="${spring.redis.host}:${spring.redis.port}"/>
     <dubbo:monitor protocol="registry" />
 
-    <dubbo:protocol name="thrift2" port="12410"/>
+    <!--<dubbo:protocol name="thrift2" port="12410"/>-->
+    <dubbo:protocol name="dubbo" port="12410" server="netty4" client="netty4" serialization="protostuff" charset="UTF-8"/>
 
     <!--<dubbo:service interface="com.vteba.thrift.server.AdditionService$Iface" protocol="thrift2" ref="addServiceImpl"/>-->
     <!--<dubbo:service interface="com.vteba.tianxun.account.service.AccountService$Iface" protocol="thrift2" ref="accountServiceImpl"/>-->

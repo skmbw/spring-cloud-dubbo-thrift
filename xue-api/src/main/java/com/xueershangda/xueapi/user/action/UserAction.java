@@ -1,13 +1,13 @@
 package com.xueershangda.xueapi.user.action;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.xueershangda.tianxun.user.model.User;
-import com.xueershangda.tianxun.user.service.UserService;
+import com.xueershangda.tianxun.user.model.UserProtobuf;
+import com.xueershangda.tianxun.user.service.UserProtobufService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.thrift.TException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 用户控制器
@@ -21,14 +21,16 @@ public class UserAction {
     private static final Logger LOGGER = LogManager.getLogger(UserAction.class);
 
     @Reference
-    private UserService.Iface userService;
+    private UserProtobufService userService;
+//    private UserService.Iface userService;
 
+    @ResponseBody
     @RequestMapping("/list")
     public String list() {
         try {
-            User user = userService.find("1608101744241981");
+            UserProtobuf user = userService.getUser("1608101744241981");
             LOGGER.info(user);
-        } catch (TException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "111";
