@@ -105,4 +105,9 @@ public class UserServiceImpl extends BasicServiceImpl<User, String> implements U
     public String testString(String s) {
         return s + "aa啊啊";
     }
+
+    @Override
+    public String testTwoParam(String s, Integer i) {
+        return s + i;
+    }
 }

@@ -16,4 +16,5 @@ public interface UserProtobufService {
     int testInt(int l);
     Integer testInteger(Integer l);
     String testString(String s);
+    String testTwoParam(String s, Integer i);
 }

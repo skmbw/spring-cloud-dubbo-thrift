@@ -30,12 +30,20 @@ public class UserAction {
     @RequestMapping("/list")
     public String list() {
         try {
-//            UserProtobuf user = userService.getUser("1608101744241981");
+            UserProtobuf user = userService.getUser("1608101744241981");
             UserProtobuf protobuf = new UserProtobuf();
             protobuf.setBirthday(12112L);
             protobuf.setAge(22);
             protobuf.setAvatar("/dadfa/jp.jpg");
             List<UserProtobuf> list = userService.list(protobuf);
+
+            int i = userService.testInt(22);
+            Integer i2 = userService.testInteger(23);
+            long l = userService.testLong(26);
+            Long ll = userService.testLonger(27L);
+            String s = userService.testString("gagalll");
+            String ss = userService.testTwoParam("gagalll", 28);
+
             LOGGER.info("list end");
         } catch (Exception e) {
             e.printStackTrace();
