@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * 用户控制器
  *
@@ -28,8 +30,13 @@ public class UserAction {
     @RequestMapping("/list")
     public String list() {
         try {
-            UserProtobuf user = userService.getUser("1608101744241981");
-            LOGGER.info(user);
+//            UserProtobuf user = userService.getUser("1608101744241981");
+            UserProtobuf protobuf = new UserProtobuf();
+            protobuf.setBirthday(12112L);
+            protobuf.setAge(22);
+            protobuf.setAvatar("/dadfa/jp.jpg");
+            List<UserProtobuf> list = userService.list(protobuf);
+            LOGGER.info("list end");
         } catch (Exception e) {
             e.printStackTrace();
         }

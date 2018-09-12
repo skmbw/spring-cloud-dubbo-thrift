@@ -195,6 +195,18 @@
 			<version>3.6.1</version>
 		</dependency>
 
+        <dependency>
+            <groupId>com.xueershangda</groupId>
+            <artifactId>dubbo-ext</artifactId>
+            <version>1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>dubbo</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
