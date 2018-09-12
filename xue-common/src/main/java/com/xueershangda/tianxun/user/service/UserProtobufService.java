@@ -10,6 +10,10 @@ import java.util.List;
  */
 public interface UserProtobufService {
     UserProtobuf getUser(String id);
-
     List<UserProtobuf> list(UserProtobuf user);
+    Long testLonger(Long l);
+    long testLong(long l);
+    int testInt(int l);
+    Integer testInteger(Integer l);
+    String testString(String s);
 }

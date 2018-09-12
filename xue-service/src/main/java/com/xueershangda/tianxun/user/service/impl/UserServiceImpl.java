@@ -80,4 +80,29 @@ public class UserServiceImpl extends BasicServiceImpl<User, String> implements U
         list.add(protobuf);
         return list;
     }
+
+    @Override
+    public Long testLonger(Long l) {
+        return l + 22;
+    }
+
+    @Override
+    public long testLong(long l) {
+        return l + 23;
+    }
+
+    @Override
+    public int testInt(int l) {
+        return l + 26;
+    }
+
+    @Override
+    public Integer testInteger(Integer l) {
+        return l + 27;
+    }
+
+    @Override
+    public String testString(String s) {
+        return s + "aa啊啊";
+    }
 }
